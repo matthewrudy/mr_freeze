@@ -17,11 +17,14 @@ task :default => ["test"]
 #
 #   http://rubygems.org/read/chapter/20
 #
+
+require File.dirname(__FILE__)+"/lib/mr_freeze/version"
+
 spec = Gem::Specification.new do |s|
 
   # Change these as appropriate
   s.name              = "mr_freeze"
-  s.version           = "0.1.0"
+  s.version           = MrFreeze::VERSION
   s.summary           = "freeze objects nestedly"
   s.author            = "Matthew Rudy Jacobs"
   s.email             = "MatthewRudyJacobs@gmail.com"
