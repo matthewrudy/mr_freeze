@@ -1,7 +1,7 @@
 require 'test_helper'
 require 'mr_freeze'
 
-class MrFreezeTest < ActiveSupport::TestCase
+class MrFreezeTest < Test::Unit::TestCase
     test "freeze! freezes members of arrays" do
       array = ["I", "am", "an", "array", "of", "strings"]
       array.each do |string|
