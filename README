@@ -1,6 +1,8 @@
 mr_freeze
 =========
 
+[![Build Status](https://travis-ci.org/matthewrudy/mr_freeze.svg?branch=master)](https://travis-ci.org/matthewrudy/mr_freeze)
+
 Real name: Dr Victor Fries
 
 Description
@@ -12,19 +14,19 @@ Example
 =======
 
     gem install mr_freeze
-    
+
     # without mr_freeze
     hash = {"some" => "hash"}.freeze
     hash["some"].sub!(/h/, "b")
-    
+
     # => uh oh... we've changed the string in place
-    
+
     # load mr_freeze
     require 'rubygems'
     require 'mr_freeze'
-    
+
     # with mr_freeze
     hash = {"victor" => "fries"}.freeze!
     hash["victor"].sub!(/f/, "c")
-    
+
     # => TypeError: can't modify frozen string
