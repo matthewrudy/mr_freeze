@@ -30,3 +30,8 @@ Example
     hash["victor"].sub!(/f/, "c")
 
     # => TypeError: can't modify frozen string
+
+License
+=======
+
+mr_freeze is released under the [MIT License](http://www.opensource.org/licenses/MIT).
