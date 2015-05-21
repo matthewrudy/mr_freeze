@@ -65,14 +65,14 @@ class MrFreezeTest < Test::Unit::TestCase
 
   test "freeze! on integers" do
     integer = 23
-    assert_frozen integer
+    assert_frozen integer unless ruby19?
     integer.freeze!
     assert_frozen integer
   end
 
   test "freeze! on symbols" do
     symbol = :abc
-    assert_frozen symbol
+    assert_frozen symbol unless ruby19?
     symbol.freeze!
     assert_frozen symbol
   end
@@ -87,6 +87,10 @@ class MrFreezeTest < Test::Unit::TestCase
   end
 
   protected
+
+  def ruby19?
+    RUBY_VERSION =~ /1.9/
+  end
 
   def assert_frozen(object)
     assert object.frozen?, "expected #{object.inspect} to be frozen"
